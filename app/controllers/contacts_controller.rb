@@ -1,10 +1,14 @@
 class ContactsController < ApplicationController
   def new
-    
   end
+
   def create
     @contact_data = Contact.new(contact_params)
-    @contact_data.save
+    if @contact_data.valid?
+      @contact_data.save
+    else
+      render action: :new #plain: 'new'
+    end
   end
 
   private
