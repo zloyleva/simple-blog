@@ -1,11 +1,12 @@
 class ContactsController < ApplicationController
+  
   def new
   end
 
   def create
-    @contact_data = Contact.new(contact_params)
-    if @contact_data.valid?
-      @contact_data.save
+    @contact = Contact.new(contact_params)
+    if @contact.valid?
+      @contact.save
     else
       render action: :new #plain: 'new'
     end
