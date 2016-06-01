@@ -4,5 +4,7 @@
 	<div style="border: 1px solid; margin: 10px; padding: 20px;">
 		<h3><%= article_item.title %></h3>
 		<p style="padding-left: 20px;"><%= article_item.text %></p>
+		<%= link_to 'Show article', article_path(article_item) %>
+		<%= link_to 'Edit article',  edit_article_path(article_item) %>
 	</div>
 <% end %>
